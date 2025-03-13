@@ -1,0 +1,83 @@
+body {
+    background-image: url('Pixel\ №1.jpg');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    background-position: center; /* Centers the image */
+  }
+  body {
+    display: flex;
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+  }
+  #knight-message {
+    
+    background: rgba(216, 208, 199, 0.699);
+    border: 2px solid #fff;
+    padding: 20px;
+    width: 45%;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-bottom: 19%;
+    animation: glow 1.5s infinite alternate;
+    font-size: 20px; /* Adjust the size here */
+    
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 10px #948754, 0 0 15px #a7bc4d;
+    }
+    to {
+        box-shadow: 0 0 5px #fff, 0 0 10px #948754, 0 0 15px #a7bc4d;
+    }
+}
+
+#next img {
+    width: 155px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer; /* Show clickable hand cursor */
+}
+.letter-img {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    margin-top:90% ;
+    margin-left: 0%;
+    margin-right: 60%;
+
+    position: fixed; /* Keeps it in place while scrolling */
+    bottom: 40px; /* Distance from the bottom */
+    right: 40px; /* Distance from the right */
+    z-index: 1000; 
+    
+}
+
+.letter-img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+}
+#next {
+  
+    position: fixed; /* Keeps it in place while scrolling */
+    bottom: 10%; /* Distance from the bottom */
+    right: 61%; /* Distance from the right */
+    z-index: 1000; /* Makes sure it appears above other elements */
+     
+     background-color: aqua;
+     border-radius: 10px;
+     border: 2px solid #65b6ca;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+    border-radius: 10px;
+    
+    animation: glow 1.5s infinite alternate;
+    font-size: 19px; /* Adjust the size here */
+    
+    }
+    #next:hover {
+        background-color: #1a424d;
+        color: white;
+        cursor: pointer;
+    }

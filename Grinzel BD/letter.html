@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="letter.css">
+    <title>letter</title>
+</head>
+<body>
+      <!-- Background Music (hidden, controlled by session storage) -->
+      <audio id="bg-music" loop>
+        <source src="Undertale OST_ 017 - Snowy(MP3_160K).mp3" type="audio/mp3">
+    </audio>
+    <div id="letter-container">
+        <img src="letterrr.png" alt="Magical scroll" id="scroll-img">
+    </div>
+    <img src="meriem.png" alt="next" id="knight">
+    <a href="page4.html" id="next"><img src="next.png"></a>
+    <script>
+       
+        
+        // Check if music should already be playing
+        const bgMusic = document.getElementById('bg-music');
+        if (sessionStorage.getItem('musicPlaying') === 'true') {
+            bgMusic.play();
+        }
+        </script>
+
+</body>
+</html>

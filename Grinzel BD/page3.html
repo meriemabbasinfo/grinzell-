@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gate?</title>
+    <link rel="stylesheet" href="gate.css">
+</head>
+<body>
+    <div id="knight-message">
+        <p id="message-text"></p>
+    </div>
+
+    <!-- Background Music (hidden, controlled by session storage) -->
+    <audio id="bg-music" loop>
+        <source src="Undertale OST_ 006 - Uwa__ So Temperate♫(MP3_160K).mp3" type="audio/mp3">
+    </audio>
+    <button id="next" onclick="window.location.href='page2.html'">LETSSSS GOO</button>
+<img src="knight.png" alt="next" id="knight">
+    <script>
+        const message = `
+        Halt, Sir Anes Bettahar…
+
+You stand at the gates of Grinzell — a hidden realm of magic, wonder, and secrets untold. 🌌
+
+By the decree of the Developer Enchantress, Meriem — the architect of this enchanted world and the keeper of your heart — I have been summoned to guide you.
+
+Beyond this point lies a universe crafted just for you — filled with mysteries to unravel and surprises only the bravest can uncover.
+
+So tell me, valiant one…
+
+Are you ready to step into the magical world of Grinzell? 🏰✨
+
+
+
+        `;
+
+        let index = 0;
+        const textElement = document.getElementById('message-text');
+
+        function typeWriter() {
+            if (index < message.length) {
+                textElement.innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 60);
+            }
+        }
+
+        window.onload = typeWriter;
+
+        // Check if music should already be playing
+        const bgMusic = document.getElementById('bg-music');
+        if (sessionStorage.getItem('musicPlaying') === 'true') {
+            bgMusic.play();
+        }
+    </script>
+
+</body>
+</html>

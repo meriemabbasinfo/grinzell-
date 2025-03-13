@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Grinzell world</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sound Icon -->
+    <div class="sound-icon" id="sound-icon">🔊</div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="Undertale OST_ 005 - Ruins(MP3_160K).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Image buttons -->
+    <div>
+        <a href="page1.html" class="img-button" onclick="navigateWithMusic(event, 'page1.html')">
+            <img id="btn1" src="start.png" alt="start">
+        </a>
+        <a href="#" class="img-button">
+            <img id="btn2" src="menu.png" alt="">
+        </a>
+        <a href="#" class="img-button">
+            <img id="btn3" src="exit (2).png" alt="exit">
+        </a>
+    </div>
+
+    <script>
+        const bgMusic = document.getElementById('bg-music');
+        const soundIcon = document.getElementById('sound-icon');
+
+        // Check if music should already be playing
+        window.addEventListener('DOMContentLoaded', () => {
+            if (sessionStorage.getItem('musicPlaying') === 'true') {
+                bgMusic.play();
+            }
+        });
+
+        // Toggle music on icon click
+        soundIcon.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                soundIcon.textContent = '🔊';
+                sessionStorage.setItem('musicPlaying', 'true');
+            } else {
+                bgMusic.pause();
+                soundIcon.textContent = '🔇';
+                sessionStorage.setItem('musicPlaying', 'false');
+            }
+        });
+
+        // Navigation without stopping music
+        function navigateWithMusic(event, page) {
+            event.preventDefault();
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

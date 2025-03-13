@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome Boss Anes</title>
+    <link rel="stylesheet" href="page1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="knight-message">
+        <p id="message-text"></p>
+    </div>
+
+    <!-- Background Music (hidden, controlled by session storage) -->
+    <audio id="bg-music" loop>
+        <source src="Undertale OST_ 005 - Ruins(MP3_160K).mp3" type="audio/mp3">
+    </audio>
+    <a href="page3.html" id="next"><img src="next.png"></a>
+
+    <script>
+        const message = `
+Greetings, brave traveler, Sir Anes Bettahar...  
+I am your guide, a knight sworn to protect you on this magical journey.
+
+But I am no ordinary knight — I was sent by miss Meriem — your greatest ally, your most loyal companion... and the one who holds your heart.
+
+Meriem told me that today is your birthday. Together, we shall explore hidden realms, unlock secrets, and conquer every challenge that lies ahead.
+
+So, fear not — for with me by your side, and Meriem's love as your shield, nothing can stand in your way. Bro how did you win her heart ! ur dick game must be good ! 
+
+Shall we begin?
+        `;
+
+        let index = 0;
+        const textElement = document.getElementById('message-text');
+
+        function typeWriter() {
+            if (index < message.length) {
+                textElement.innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 60);
+            }
+        }
+
+        window.onload = typeWriter;
+
+        // Check if music should already be playing
+        const bgMusic = document.getElementById('bg-music');
+        if (sessionStorage.getItem('musicPlaying') === 'true') {
+            bgMusic.play();
+        }
+    </script>
+
+</body>
+</html>

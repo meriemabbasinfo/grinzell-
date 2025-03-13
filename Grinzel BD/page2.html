@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grinzell world</title>
+    <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+    <div id="knight-message">
+        <p id="message-text"></p>
+    </div>
+
+    <!-- Background Music (hidden, controlled by session storage) -->
+    <audio id="bg-music" loop>
+        <source src="Undertale OST_ 031 - Waterfall(MP3_160K).mp3" type="audio/mp3">
+    </audio>
+    <img src="knight.png" alt="next" id="knight">
+    <a href="letter.html" id="see-message-btn">
+        <img src="letter.png" alt="Open the letter" class="letter-img">
+    </a>
+
+    <script>
+        const message = `
+        Welcome to the mystical realm of Grinzell — a world of magic, wonder, and secrets waiting to be discovered. 🌌
+
+… but before we begin, I bear something of great importance.
+
+A letter… from none other than the one who wove this world into existence ,Metiti
+She has entrusted me to deliver it to you, for it carries words only meant for your heart.
+
+Will you open the letter and unveil her message? 💌
+
+
+        `;
+
+        let index = 0;
+        const textElement = document.getElementById('message-text');
+
+        function typeWriter() {
+            if (index < message.length) {
+                textElement.innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 60);
+            }
+        }
+
+        window.onload = typeWriter;
+
+        // Check if music should already be playing
+        const bgMusic = document.getElementById('bg-music');
+        if (sessionStorage.getItem('musicPlaying') === 'true') {
+            bgMusic.play();
+        }
+    </script>
+</body>
+</html>

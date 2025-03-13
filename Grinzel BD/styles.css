@@ -1,0 +1,64 @@
+body {
+  background-image: url('download\ \(44\).jpg');
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-attachment: fixed; /* Keeps the background fixed during scroll */
+  background-position: center; /* Centers the image */
+}
+body {
+  display: flex;
+  justify-content: right; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+div{
+  width: 60%;
+  margin-right: 30%;
+}
+.button-container {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
+.img-button {
+  display: block; /* Ensure each button takes full width */
+  margin-bottom: 20px; /* Add space between buttons */
+}
+
+.img-button img {
+  width: 150px; /* Adjust size */
+  height: auto;
+  background: none; /* Ensure no background */
+  cursor: pointer; /* Pointer for buttons */
+  transition: transform 0.2s ease-in-out; /* Hover effect */
+}
+
+.img-button img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+#btn1{
+  width: 149px;
+  margin-left: 53%;
+}
+#btn2{
+  width: 110px;
+  margin-left: 59%;
+}
+#btn3{
+  width: 120px;
+margin-left: 58%;
+
+}
+/* Sound icon styling */
+.sound-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+
